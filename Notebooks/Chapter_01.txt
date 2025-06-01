@@ -1,0 +1,19 @@
+### Causality
+
+Most classic ML algorithms work on the basis of association. When we train an ML model in a supervised fashion, we're trying to find a function that maps input to the output. For this, we need to figure out which elements of the input are useful for predicting the output. In most cases, association is good enough for this purpose. 
+
+#### Confounding - relationships that are not relationships
+
+An important aspect of a properly designed randomised experiment is that it allows us to avoid confounding. A confounding variable influences two or more other variables and produces a spurious association between them. From a statistical point of view, such associations are indistinguishable from the ones produced by a causal mechanism. 
+
+E.g. The association between ice cream sales and drowning accidents. The confounder here is daily average temperature; higher temperatures makes people more likely to buy ice cream and more likely to go swimming. When there are more people swimming, there are also more accidents. 
+
+Confounding is a strictly causal concept. We cannot say much about it using purely statistical language. 
+
+#### Counterfactuals
+
+We can never observe the same person under two mutually exclusive conditions at the same time. To solve this, we need counterfactuals. Counterfactuals are estimates of how the world would look like if we changed the value of one or more variables, holding everything else constant. These cannot be observed, so the true causal effect r is unknown. This is why classic ML cannot solve this problem for us. 
+
+#### Conclusion
+
+Experiments are not always available. When this is the case, we can try to use observational data to draw a causal conclusion (kinda what ML algorithms do), but the data itself is usually not enough for this purpose. We also need a causal model.
